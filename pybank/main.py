@@ -9,7 +9,7 @@ Created on Mon Feb 19 16:07:22 2018
 import csv
 import os
 
-csvFile = ["budget_data_2.csv"]
+csvFile = ["budget_data_1.csv"]
 
 for file in csvFile:
     csvPath = os.path.join("raw_data",file)
@@ -45,19 +45,6 @@ for file in csvFile:
 
 
     with open ("Results.txt", "w") as output:
-        print()
-        print()
-        print("The results are for " + str(csvFile[0]))
-        print()
-        print("Financial Analysis")
-        print("-------------------")
-        print("Total Months: ", len(date))
-        print("Total Revenue: $",sum(revenue))
-        print("Average Revenue Change: $",avgRevChange)
-        print("Greatest Increase in Revenue: "+ 
-              str(maxRevChangeDate) + "($" + str(maxRevChange) +")")
-        print("Greatest Decrease in Revenue: "+ 
-              str(minRevChangeDate) + "($" + str(minRevChange) +")")
         output.write('\n')
         output.write('\n')
         output.write('The results are for ' + str(csvFile[0]) + '\n')
@@ -71,6 +58,9 @@ for file in csvFile:
                      str(maxRevChangeDate) + '($' + str(maxRevChange) + ')\n')
         output.write('Greatest Decrease in Revenue: ' + 
                      str(minRevChangeDate) + '($' + str(minRevChange) + ')\n')
+    with open ("Results.txt", "r") as readfile:
+        print(readfile.read())
+        
 
     
 
