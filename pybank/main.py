@@ -9,7 +9,7 @@ Created on Mon Feb 19 16:07:22 2018
 import csv
 import os
 
-csvFile = ["budget_data_1.csv"]
+csvFile = ["budget_data_2.csv"]
 
 for file in csvFile:
     csvPath = os.path.join("raw_data",file)
